@@ -8,7 +8,7 @@ import org.springframework.data.repository.CrudRepository;
 import java.util.List;
 
 public interface IHitDao extends CrudRepository<Hit,String> {
-    public List<Hit> findByDeleted(boolean deleted);
+    public List<Hit> findByDeletedOrderByCreatedAtIDesc(boolean deleted);
 
     @Modifying
     @Query("update Hit h set h.deleted = ?1 where h = ?2")

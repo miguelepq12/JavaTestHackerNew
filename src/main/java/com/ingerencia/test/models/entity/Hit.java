@@ -29,7 +29,9 @@ public class Hit  implements Serializable {
 
     private String created_at;
 
-    private long created_at_i;
+    @JsonProperty("created_at_i")
+    @Column(name = "created_at_i")
+    private long createdAtI;
 
     private String title;
 
@@ -103,12 +105,12 @@ public class Hit  implements Serializable {
         this.created_at = created_at;
     }
 
-    public long getCreated_at_i() {
-        return created_at_i;
+    public long getCreatedAtI() {
+        return createdAtI;
     }
 
-    public void setCreated_at_i(long created_at_i) {
-        this.created_at_i = created_at_i;
+    public void setCreatedAtI(long createdAtI) {
+        this.createdAtI = createdAtI;
     }
 
     public String getTitle() {

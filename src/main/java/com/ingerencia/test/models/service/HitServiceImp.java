@@ -17,7 +17,7 @@ public class HitServiceImp implements IHitService{
     @Override
     @Transactional(readOnly = true)
     public List<Hit> findAll() {
-        return hitDao.findByDeleted(false);
+        return hitDao.findByDeletedOrderByCreatedAtIDesc(false);
     }
 
     @Override
